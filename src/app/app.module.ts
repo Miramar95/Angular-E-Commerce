@@ -23,12 +23,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartCounterComponent,
     WishListComponent,
     SingleProductComponent,
-    ReactiveFormsModule
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
