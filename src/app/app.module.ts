@@ -11,6 +11,7 @@ import { CartCounterComponent } from './components/cart-counter/cart-counter.com
 import { WishListComponent } from './components/wish-list/wish-list.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NotFoundComponent,
     CartCounterComponent,
     WishListComponent,
-    SingleProductComponent
+    SingleProductComponent,
+    ReactiveFormsModule
   ],
   imports: [
     BrowserModule,
