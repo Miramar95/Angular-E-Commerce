@@ -13,6 +13,7 @@ import { SingleProductComponent } from './components/single-product/single-produ
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +24,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartCounterComponent,
     WishListComponent,
     SingleProductComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+ 
 
   ],
   providers: [],

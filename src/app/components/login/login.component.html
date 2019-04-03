@@ -1,15 +1,24 @@
+<div class="log-div container">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <label>
-  Email:
-  <input type="email" formControlName="email">
-</label>
+  <div class="form-log">
 
-<label>
-  Password:
-  <input type="password" formControlName="password">
-</label>
-<button type="submit" [disabled]="!loginForm.valid">Submit</button>
+<h1> LOGIN </h1>
+    <div>
 
+      <input type="email" class="log-group" placeholder="Email" formControlName="email" required>
+  </div>
+    
+      <div>
 
-</form>
+      <input type="password" class="log-group" placeholder="Password" formControlName="password"required>
+
+  </div>
+    <div>
+        <input type="submit" class="btn btn-warning but-form" value="Log in">
+      </div>
+  </div>
+
+  </form>
+
+</div>
