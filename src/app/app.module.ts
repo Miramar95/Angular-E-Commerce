@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -12,6 +12,7 @@ import { WishListComponent } from './components/wish-list/wish-list.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavBarComponent } from './components/shared/nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartCounterComponent,
     WishListComponent,
     SingleProductComponent,
+    NavBarComponent,
     
   ],
   imports: [
@@ -31,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
+    HttpClientModule,
     
  
 
