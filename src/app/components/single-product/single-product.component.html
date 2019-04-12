@@ -1,3 +1,41 @@
-<p>
-  single-product works!
-</p>
+
+<div class="container">
+    <br><br>
+    <div class="card" *ngFor="let item of items">
+      <div class="row" *ngIf="item.id== id">
+        <aside class="col-sm-5 border-right">
+          <article class="gallery-wrap">
+            <div class="img-big-wrap">
+              <div> <a href="{{item.img}}">
+                  <img class="img" src="{{item.img}}"></a></div>
+            </div>
+          </article>
+        </aside>
+        <aside class="col-sm-7">
+          <article class="card-body p-5">
+            <h3 class="title mb-3">{{item.name}}</h3>
+  
+            <p class="price-detail-wrap">
+              <b>Price: </b>
+              <span class="price h3 text-success">
+                <span class="num">{{item.price}} $</span>
+              </span>
+            </p>
+  
+            <dl class="item-property">
+              <dt>Description</dt>
+              <dd>
+                <p> {{item.desc}} </p>
+              </dd>
+            </dl>
+
+            <hr>
+            <!-- <a href="http://localhost:4200/wish" class="btn btn-primary fa fa-heart"> Add to Wish List</a>
+            <a href="http://localhost:4200/cart" class="btn btn-primary fa fa-cart-plus"> Add to Cart</a> -->
+          </article>
+        </aside>
+      </div> 
+    </div>
+  </div>
+  <br><br><br>
+  

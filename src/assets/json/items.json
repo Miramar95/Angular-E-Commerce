@@ -1,0 +1,69 @@
+{
+	"items": [
+		{
+			"img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1000.jpg",
+            "id": 1,
+            "desc":"Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+            "name": "Notebook Basic 15",
+			"price":  956
+		},
+		{
+			"img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1001.jpg",
+            "id":2,
+            "desc": "Notebook Basic 17 with 2,80 GHz quad core, 17\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+            "name": "Notebook Basic 17",
+            "price": 512
+		},
+		{
+            "img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1065.jpg",
+            "id":3,
+            "desc": "Corded Ergonomic Keyboard with special keys for Media Usability, USB",
+            "name": "Ergonomic Keyboard",
+            "price": 112
+		},
+		{
+            "img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-1502.jpg",
+            "id":4,
+            "desc": "Dual socket, quad-core processing server with 1644 MHz Front Side Bus with 100Gb connectivity",
+            "name": "Server Power Pro",
+			"price": 2110
+		},
+		{
+            "img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-7030.jpg",
+            "id":5,
+            "desc": "Our new multifunctional Handheld with phone function in platinum",
+            "name": "Platinberry",
+			"price": 100
+        },
+
+        {
+            "img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-8002.jpg",
+            "id":6,
+            "desc": "Notebook with 2,80 GHz quad core, 4 GB DDR3 SDRAM, 1000 GB Hard Disc, Windows 8",
+            "name": "ITelO FlexTop I9100",
+			"price": 500
+        },
+        {
+            "img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-9998.jpg",
+            "desc": "5 Megapixel Camera, Wi-Fi 802.11 b/g/n, Bluetooth, GPS Available-GPS support",
+            "id":7,
+            "name": "Smartphone Beta",
+			"price": 300
+        },
+        {
+            "img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-9997.jpg",
+            "desc": "6-Inch E Ink Screen, Access To e-book Store, Adjustable Font Styles and Sizes, Stores Up To 1,000 Books",
+            "id":8,
+            "name": "e-Book Reader ReadMe",
+			"price": 150
+        },
+        
+        {
+            "img": "https://openui5.hana.ondemand.com/test-resources/sap/ui/documentation/sdk/images/HT-9993.jpg",
+            "desc": "7 inch 1280x800 HD display (216 ppi), Quad-core processor, 16 GB internal storage, 4325 mAh battery (Up to 8 hours of active use)",
+            "id":9,
+            "name": "Mini Tablet",
+			"price": 200
+		}
+	]
+} 

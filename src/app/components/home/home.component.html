@@ -1,3 +1,17 @@
-<p>
-  home works!
-</p>
+
+
+
+<div class="container" >
+    <div class="card d-inline-block " *ngFor="let item of items">
+     <a (click)= "navigateToSingle()" id={{item.id}} >   <img  id={{item.id}} class="card-img" src="{{ item.img }}" alt="Card image cap"> </a>
+      <div class="card-body item-div" id= "{{item.id}}" >
+        <h5 class="card-title">{{ item.name }}</h5>
+        <a (click)=AddCart()  id= "{{item.id}}" class="btn btn-info btn-lg">
+          <span  class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+        </a>
+        <button type="button" class="btn btn-warning">Add to WishList</button>
+
+      </div>
+
+    </div>
+    </div>

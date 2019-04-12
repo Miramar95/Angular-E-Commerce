@@ -1,0 +1,77 @@
+<ng-container *ngIf="router.url === '/login' ">
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="form-log">
+
+
+    <div>
+
+      <input id="email" type="email" class="log-group" placeholder="Email" [formControlName]="'email'"  required>
+  </div>
+  <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)"
+  class="alert alert-danger">
+  <div  *ngIf="loginForm.controls.email.invalid">
+    <label class="alert-msg"> Email is Required </label>
+  </div>
+  </div>
+
+
+      <div>
+      <input type="password" class="log-group" placeholder="Password" [formControlName]="'password'" required>
+  </div>
+
+  <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)"
+  class="alert alert-danger">
+  <div  *ngIf="loginForm.controls.password.invalid">
+    <label class="alert-msg"> Password is Required </label>
+  </div>
+  
+  </div>  
+
+  </div>
+
+  </form>
+</ng-container>
+
+<ng-container *ngIf="router.url === '/register' ">
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="form-log">
+  
+      <div>
+  
+        <input id="name" type="text" class="log-group" placeholder="Name" [formControlName]="'name'"  required>
+    </div>
+      <div>
+        <div *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.dirty || registerForm.controls.name.touched)"
+        class="alert alert-danger">
+    
+        <div  *ngIf="registerForm.controls.name.invalid">
+        <label class="alert-msg"> Name is Required </label>
+        </div>
+        </div>
+          
+        <input id="email" type="email" class="log-group" placeholder="Email" [formControlName]="'email'"  required>
+    </div>
+    <div *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)"
+    class="alert alert-danger">
+
+    <div  *ngIf="registerForm.controls.email.invalid">
+      <label class="alert-msg"> Email is Required </label>
+    </div>
+    </div>
+      
+        <div>
+        <input type="password" class="log-group" placeholder="Password" [formControlName]="'password'" required>
+    </div>
+
+    <div *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)"
+    class="alert alert-danger">
+    <div  *ngIf="registerForm.controls.password.invalid">
+      <label class="alert-msg"> Password is Required And Max Length 16 </label>
+    </div>
+    </div>
+
+    </div>
+  
+    </form>
+  </ng-container>

@@ -1,36 +1,63 @@
-<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
-    <a class="navbar-brand" href="http://localhost:8080"> HOME </a>
-    <a class="navbar-brand" href="http://localhost:8080/login"> LOGIN </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:8080/cp"> CART <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:8080/wishlist"> WISH LIST <span class="sr-only">(current)</span></a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-         
-        </li>
-      </ul>
-
+<nav class="navbar navbar-expand-lg  navbar-dark "  style="background-color:black;">
+ 
+    <button class="navbar-brand btn-block" (click)= "navigateTo('/')"> Home </button>
+    <div class="btns" *ngIf="currentUser == Null">
+      <div class="btn-group mr-3  cart-div">
+        <button class="navbar-brand btn-block" (click)= "navigateTo('login')"> Login </button>
+        <button class="navbar-brand btn-block" (click)= "navigateTo('register')"> Register </button>
+      </div>
     </div>
+
+
+    <div class="btn-group mr-3  cart-div" *ngIf="currentUser != Null">
+      <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button class="btn btn-outline-primary align-right" ngbDropdownToggle>Welcome {{currentUser[0]}}</button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+          <button class="btn btn-outline-primary btn-block" (click)="logOut()"> Log Out </button>
+        </div>
+      </div>
+    </div>
+    
+
+    
+    <div class="btn-group mr-3 ">
+      <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button (click)="GetId()" class="btn btn-outline-primary align-right" ngbDropdownToggle>CART</button>
+        <div class="dropdown-menu cart-items" ngbDropdownMenu >
+          <label class="u"> Cart </label>
+          <table class="table">
+            <th class="cart-row">Product </th>
+            <th class="cart-row"> Quantity </th>
+            <tr>
+              <td>
+          <div class="cart d-inline-block" *ngFor="let id of ids">
+              <img class="cart-img" src="{{ items[id-1]['img'] }}" alt="Card image cap">
+          <label class=" cart-label btn "> {{items[id-1]['name']}} </label>
+          <div class= cart-cancel >
+              <button id ="{{id}}" (click)="removeCart()" class=" btn btn btn-danger"> X  </button>
+            </div>
+        </div>
+      </td>
+         <div *ngIf="count">
+          <div class="cart d-inline-block "  *ngFor="let id of count">
+          <td>
+          <label class=" cart-label btn "> {{currentItems[id]['count']}} </label> 
+         
+      </td>
+     
+          </div>
+          </div>
+        </tr>
+         <div> 
+          <button class=" cart-but btn btn-outline-primary btn-block " (click)= "navigateTo('cp')"> Go to Cart </button>
+         </div>
+      
+        </table>
+        </div>
+        
+      </div>
+    </div>
+
+
+    
   </nav>

@@ -1,0 +1,16 @@
+.container{
+    
+    .card{
+        margin-right:150px;
+        margin-top: 100px;
+        &:hover{
+            background-color: rgb(167, 207, 218);
+        }
+        .card-img{
+            height:400px;
+            width:400px;
+        }
+
+    
+    }
+    }

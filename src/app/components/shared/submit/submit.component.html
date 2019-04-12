@@ -1,0 +1,12 @@
+<ng-container *ngIf="router.url === '/login' ">
+<div [formGroup]="loginForm">
+    <button type="submit" class="btn btn-warning but-form" (click)="login()"> Submit </button>
+</div>
+</ng-container>
+
+<ng-container *ngIf="router.url === '/register' ">
+<div [formGroup]="registerForm">
+    <button [disabled]="!registerForm.valid" type="submit" class="btn btn-warning but-form" (click)="register()"> Register</button>
+    
+</div>
+</ng-container>
