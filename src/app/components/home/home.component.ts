@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { StreamService } from 'src/app/services/stream.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,13 @@ import { StreamService } from 'src/app/services/stream.service';
 })
 export class HomeComponent implements OnInit {
   items: [];
-  constructor(private router :Router,private http: HttpClient,private stream :StreamService) { }
+  constructor(private router :Router,private http: HttpClient,private stream :StreamService,private wish :WishlistService ) { }
   ngOnInit() {
     this.http.get('../../../assets/json/items.json')
     .subscribe(data => {
     this.items = data["items"];
   });
+
   }
   public navigateToSingle(path:string):void{
     this.router.navigate(['sp',event.target['id']]);
@@ -53,6 +55,40 @@ export class HomeComponent implements OnInit {
     }
     this.stream.setCart(JSON.parse(localStorage.getItem("cart")))
   }
+
+  AddWish(){
+    var idWish = event.target['id']
+    console.log(idWish)
+    var wish= JSON.parse(localStorage.getItem('wish'))? JSON.parse(localStorage.getItem("wish")) : [];
+    var itemCount ={}
+    var found 
+    if (wish){
+        for (var i = 0; i < wish.length; i++) {
+          if (wish[i].item.id==idWish){
+              wish[i]['count']= wish[i]['count'] +1
+              found = true } }
+    if (!found){
+        itemCount = {
+          item:this.items[idWish-1],
+          count:1}
+        wish.push(itemCount)
+    }
+    localStorage.setItem('wish',JSON.stringify(wish))  
+    }
+    else{
+      itemCount = {
+        item:this.items[idWish],
+        count:1
+      }
+      wish.push(itemCount)
+      localStorage.setItem('wish',JSON.stringify(wish))
+
+    }
+    console.log(wish[0].item.id)
+
+    this.wish.setWish(JSON.parse(localStorage.getItem("wish")))
+
+}
 
 
 getId(){
